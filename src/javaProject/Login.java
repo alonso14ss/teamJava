@@ -57,7 +57,6 @@ public class Login extends JFrame {
 
 	public Login() {
 		connect();
-		
 		p_id = new JPanel();
 		p_id.setPreferredSize(new Dimension(200, 30));
 		la_id = new JLabel("   ID");
@@ -111,7 +110,7 @@ public class Login extends JFrame {
 
 		la_reg.addMouseListener(new MouseAdapter() {
 			public void mouseClicked(MouseEvent e) {
-				JOptionPane.showMessageDialog(Login.this, "회원가입");
+				new Regist(Login.this);
 			}
 		});
 	}
