@@ -39,7 +39,7 @@ public class GameWatingRoom extends JFrame implements ActionListener {
 		System.out.println(area);
 		p_west = new JPanel();
 		scroll = new JScrollPane(area);
-		t_input = new JTextField("채팅 입력될 텍스트 필드", 30);
+		t_input = new JTextField(30);
 
 		p_east = new JPanel();
 		bt_myRoom = new JButton("마이룸");
@@ -52,14 +52,14 @@ public class GameWatingRoom extends JFrame implements ActionListener {
 
 		// 서쪽 패널 디자인
 		p_west.setPreferredSize(new Dimension(450, 900));
-		p_west.setBackground(Color.white);
+		p_west.setBackground(Color.GRAY);
 		area.setPreferredSize(new Dimension(450, 800));
-		area.setBackground(Color.RED);
+		area.setBackground(Color.WHITE);
 		area.setFont(new Font("굴림", Font.BOLD, 16));
 
 		// 동쪽 패널 디자인
 		p_east.setPreferredSize(new Dimension(350, 900));
-		p_east.setBackground(Color.yellow);
+		p_east.setBackground(Color.GRAY);
 		bt_myRoom.setPreferredSize(new Dimension(150, 150));
 		bt_shop.setPreferredSize(new Dimension(150, 150));
 		p_table.setPreferredSize(new Dimension(350, 500));
@@ -84,7 +84,7 @@ public class GameWatingRoom extends JFrame implements ActionListener {
 		p_east.add(bt_logout);
 		add(p_east);
 
-		setSize(800, 900);
+		setSize(800, 870);
 		setVisible(true);
 		setLocationRelativeTo(null);
 		setResizable(false);
@@ -109,6 +109,7 @@ public class GameWatingRoom extends JFrame implements ActionListener {
 					// 텍스트필드에서 쳐서 넣은 메시지 전달
 					String msg = t_input.getText();
 					login.clientThread.send(msg); // 보내고
+					t_input.setText("");
 				}
 			}
 		});

@@ -41,7 +41,7 @@ public class MyClientThread extends Thread{
    public void send(String msg) {
 	   
       try {
-         buffw.write(msg+"\n");
+         buffw.write(Login.myId+" : "+msg+"\n");
          buffw.flush();
       } catch (IOException e) {
          e.printStackTrace();

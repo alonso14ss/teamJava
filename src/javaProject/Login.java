@@ -52,6 +52,8 @@ public class Login extends JFrame {
 	ImageIcon icon;
 
 	GameMain gameMain;
+	
+	String myId = null;
 
 	public Login() {
 		connect();
@@ -128,6 +130,7 @@ public class Login extends JFrame {
 			if (rs.next()) {// 일치하는 데이터 존재함
 				JOptionPane.showMessageDialog(this, "로그인 성공");
 				userId = t_id.getText();
+				myId = userId;
 				loginCheckFlag = true;
 				t_id.setText("");
 				t_pw.setText("");
